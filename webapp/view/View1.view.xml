@@ -1,0 +1,75 @@
+<mvc:View controllerName="MiniSap.project1.controller.View1"
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:layout="sap.ui.layout" 
+xmlns:semantic="sap.f.semantic" 
+xmlns="sap.m"
+xmlns:u="sap.ui.unified"
+xmlns:fb="sap.ui.comp.filterbar" 
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+height="100%">
+
+
+  <Page id="idPage" backgroundDesign="Solid" showNavButton="true" navButtonPress="onBack" title="User">
+		<headerContent>
+		<Button id="btn1" text="Crear usuario" type="Success" press="onCrearUser"/>
+		
+	
+		</headerContent>
+		
+			<Table id="idTable" inset="false" items="{ path:'User>/' }"
+				growing="true" growingScrollToLoad="true">
+				<infoToolbar>
+					<OverflowToolbar>
+						<Label id="idLabelRegistros"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column demandPopin="true">
+						<Text text="Nombre"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="Apellido"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="Mail"/>
+					</Column>	
+					<Column demandPopin="true">
+						<Text text="ID"/>
+					</Column>	
+					<Column demandPopin="true">
+						<Text text="Borrar"/>
+					</Column>	
+					<Column demandPopin="true">
+						<Text text="Actualizar"/>
+					</Column>	
+					<Column demandPopin="true">
+						<Text text="Duplicar"/>
+					</Column>						
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="FilaPress">
+						<cells >
+							<Text text="{User>Nombre}"/>
+							<Text text="{User>Apellido}"/>
+							<Text text="{User>Email}"/>
+							<Text text="{User>ID}"/>							
+							<Button id="BTN2" icon="sap-icon://delete" type="Negative" press="OnDelete"></Button>
+							<Button id="BTN3" icon="sap-icon://sort" type="Neutral" press="OnUpload" text="Update" tooltip="Sort"></Button>
+							<Button id="BTN4" icon="sap-icon://duplicate" type="Neutral" press="OnDuplicar" text="Duplicate" tooltip="Sort"></Button>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+	
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<u:FileUploader id="fileUploader" name="myFileUpload" buttonOnly="true" change="onUploadFile" buttonText="{i18n>upload}"
+					icon="sap-icon://upload"/>
+				<Button text="{i18n>guardar}" icon="sap-icon://save" press="onGuardar"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

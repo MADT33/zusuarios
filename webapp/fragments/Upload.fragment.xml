@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialog"
+      title="Actualizar Usuario">
+
+      <FlexBox justifyContent="SpaceBetween" alignItems="Center" alignContent="Center">
+        <Input id="inputId" value="ID" 	enabled="false" width="2rem"/>
+         <Input id="inputNombre" value="ID" width="4rem"/>
+          <Input id="inputApellido" value="ID" width="4rem"/>
+           <Input id="inputEmail" value="ID" width="12rem"/>
+  </FlexBox>
+
+
+
+      <FlexBox justifyContent="SpaceBetween" alignItems="Center" backgroundDesign="Transparent">
+					<Button width="12em" text="Cancel" class="sapUiMediumMarginBegin" press="oncancelar" type="Emphasized"></Button>
+					<Button width="12em" text="Uplaad" class="sapUiMediumMarginBegin" press="onUploadDatos" type="Emphasized"></Button>
+				</FlexBox>
+   </Dialog>
+</core:FragmentDefinition>

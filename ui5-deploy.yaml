@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.6"
+metadata:
+  name: MiniSap.project1
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: minisap2023
+          url: http://minisap2023:8000
+        app:
+          name: ZUSUARIOS
+          description: Aplicaion de Usuarios
+          package: ZFIORI
+          transport: NPLK900084
+        exclude:
+          - /test/

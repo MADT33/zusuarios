@@ -1,0 +1,45 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:f="sap.ui.layout.form" 
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.comp.smartform" >
+
+<Dialog id="fragment" title="Nuevo Usuario">
+
+<form:SmartForm>
+					<form:Group id="formulario">
+						<form:GroupElement>
+							<FlexBox direction="Column">
+								<Label text="IS:" labelFor="isUsuario"/>
+								<Input id="isUsuario" value="" placeholder="Ejemplo: LEFE2" required="true"/>
+							</FlexBox>
+						</form:GroupElement>
+						<form:GroupElement>
+							<FlexBox justifyContent="SpaceBetween">
+								<FlexBox direction="Column">
+									<Label text="Nombre:" labelFor="nombre"/>
+									<Input id="nombre" value="" placeholder="Ejemplo: Leandro" required="true"/>
+								</FlexBox>
+								<FlexBox direction="Column">
+									<Label text="Apellido:" labelFor="apellido"/>
+									<Input id="apellido" value="" placeholder="Ejemplo: Fernandez" required="true"/>
+								</FlexBox>
+							</FlexBox>
+						</form:GroupElement>						
+						<form:GroupElement>
+							<FlexBox direction="Column">
+								<Label text="Mail:" labelFor="mail"/>
+								<Input id="mail" value="" placeholder="Ejemplo: Leandro.fernandez@softtek.com" required="true"/>
+							</FlexBox>
+						</form:GroupElement>
+					
+					</form:Group>
+				</form:SmartForm>
+             
+				<FlexBox justifyContent="SpaceBetween" alignItems="Center" backgroundDesign="Transparent">
+					<Button width="12em" text="Volver" class="sapUiMediumMarginBegin" press="onVolver" type="Emphasized"></Button>
+					<Button width="12em" text="Enviar" class="sapUiMediumMarginBegin" press="onCargarDatos" type="Emphasized"></Button>
+				</FlexBox>
+</Dialog>
+</core:FragmentDefinition>
